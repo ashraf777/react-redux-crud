@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import GameCard from './GameCard';
 
-export default function GamesList({ games }) {
+export default function GamesList({ games, deleteGame }) {
 	const emptyMessage = (
 		<p>There are no games yet in your collection.</p>
 	);
 
 	const gamesList = (
 		<div className="ui four cards">
-			{ games.map(game => <GameCard game={game} key={game._id} />)}
+			{ games.map(game => <GameCard game={game} key={game._id} deleteGame={deleteGame} />)}
 		</div>
 	);	
 
@@ -21,5 +21,6 @@ export default function GamesList({ games }) {
 }
 
 GamesList.propsTypes = {
-	games: PropTypes.array.isRequired
+	games: PropTypes.array.isRequired,
+	deleteGame: PropTypes.func.isRequired
 }

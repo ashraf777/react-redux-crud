@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import GamesForm from './GamesForm';
 import GamesPage from './GamesPage';
+import GamesFormPage from './GamesFormPage';
 
 import { Link, Route } from 'react-router-dom';
 
@@ -22,7 +22,8 @@ class App extends Component {
         </div>
 
         <Route exact path="/games" component={GamesPage} />
-        <Route path="/games/new" component={GamesForm} />
+        <Route path="/games/new" component={GamesFormPage} />
+        <Route path="/game/:_id" component={GamesFormPage} />
 
 
       </div>
